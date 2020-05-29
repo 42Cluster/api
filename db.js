@@ -1,7 +1,7 @@
 const sqlite3 = require('sqlite3').verbose();
 const db_source = process.env.DB_SOURCE;
 
-let db = new sqlite3.Database(db_source, sqlite3.OPEN_READWRITE, (err) => {
+let db = new sqlite3.Database(db_source, sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
     if (err)
         throw err;
     else {
